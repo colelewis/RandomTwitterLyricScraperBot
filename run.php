@@ -87,4 +87,31 @@ while ($i < count($matches[1])) {
 	$i++;
 }
 
+logStr("Searching for 1 line clumps within the song");
+$matches = [];
+preg_match_all('/^(?=(.+$))/m', $lyric, $matches);
+
+logStr("Found ".count($matches[1])." candidates.");
+
+$i = 0;
+shuffle($matches[1]);
+while ($i < count($matches[1])) {
+	logStr("Trying random lyric ".($i+1));
+
+	$lyric = $matches[1][$i];
+
+	if (strlen($lyric) <= MAX_TWEET_LENGTH) {
+		logStr("Sending tweet with lyric: ");
+
+		echo $lyric."\n";
+
+		$twitter->send($lyric);
+
+		logStr("Done!");
+		die();
+	}
+
+	$i++;
+}
+
 logStr("Unable to find a suitable lyric.");
