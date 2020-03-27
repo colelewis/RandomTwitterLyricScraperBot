@@ -1,0 +1,2 @@
+0 0 * * 1 cd /path/to/bot/ && php aggregator.php # weekly aggregate
+0 * * * * cd /path/to/bot/ && php run.php
