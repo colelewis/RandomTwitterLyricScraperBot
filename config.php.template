@@ -1,0 +1,9 @@
+<?php
+
+// Use _ for spaces and capitalize the beginning of each word
+$bandName = "your-name-here";
+
+$oauthToken = "insert tokens here";
+$oauthTokenSecret = "insert tokens here";
+$consumerKey = "insert tokens here";
+$consumerSecret = "insert tokens here";
